@@ -1,7 +1,7 @@
 const $ = new Env('精易签到');
 
 //读取环境变量里面的JY_COOKIE
-CookieJYs = [process.env.JY_COOKIE];
+CookieJYs = process.env.JY_COOKIE;
 
 //调用消息发送
 const notify = $.isNode() ? require('./sendNotify') : '';
