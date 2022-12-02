@@ -1,18 +1,7 @@
 const $ = new Env('精易签到');
- 
-//此处填写精易账号cookie。
-let CookieJYs = [
-]
-// 判断环境变量里面是否有京东ck
-if (process.env.JY_COOKIE) {
-  if (process.env.JY_COOKIE.indexOf('&') > -1) {
-    CookieJYs = process.env.JY_COOKIE.split('&');
-  } else if (process.env.JY_COOKIE.indexOf('\n') > -1) {
-    CookieJYs = process.env.JY_COOKIE.split('\n');
-  } else {
-    CookieJYs = [process.env.JY_COOKIE];
-  }
-}
+
+//读取环境变量里面的JY_COOKIE
+CookieJYs = [process.env.JY_COOKIE];
 
 //调用消息发送
 const notify = $.isNode() ? require('./sendNotify') : '';
