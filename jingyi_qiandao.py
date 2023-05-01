@@ -21,9 +21,8 @@ def jingyi_checkin():
 
     else:
         #COOKIES格式错误
-        condition = "error"
         allMessage="💔Cookie环境变量格式不对! 如：Formhash@Cookie"
-        send('精易签到', allMessage + '\n\n本通知 By HY-jingyi\n通知时间:' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),condition)
+        send('精易签到', allMessage + '\n\n本通知 By HY-jingyi\n通知时间:' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
         
 
     url = "https://bbs.125.la/plugin.php?id=dsu_paulsign:sign&operation=qiandao&infloat=1"
@@ -63,14 +62,12 @@ def jingyi_checkin():
 
                 if html_code['status'] == '1':
                     # 签到成功
-                    condition='correct'
                     allMessage = "🌷签到成功\n积累签到次数:" + html_code['data']['days'] + "\n" + "本月签到次数:" + html_code['data']['mdays'] + "\n" + "当前总有奖励:" + html_code['data']['reward'] + "\n" + "上一次签到是:" + html_code['data']['qtime']
-                    send('精易签到', allMessage + '\n\n本通知 By HY-jingyi\n通知时间:' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),condition)
+                    send('精易签到', allMessage + '\n\n本通知 By HY-jingyi\n通知时间:' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
                 else:
                     # 签到失败
-                    condition = "error"
                     allMessage =html_code['msg']
-                    send('精易签到', allMessage + '\n\n本通知 By HY-jingyi\n通知时间:' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),condition)
+                    send('精易签到', allMessage + '\n\n本通知 By HY-jingyi\n通知时间:' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
                     
                 break
 
@@ -83,9 +80,8 @@ def jingyi_checkin():
                 attempts += 1
                 if attempts == 5:
                     # 签到错误
-                    condition = "error"
                     allMessage = "💔签到未知错误2："+ str(e)
-                    send('精易签到', allMessage + '\n\n本通知 By HY-jingyi\n通知时间:' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),condition)
+                    send('精易签到', allMessage + '\n\n本通知 By HY-jingyi\n通知时间:' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
                     break
                     
 
@@ -94,9 +90,8 @@ def jingyi_checkin():
             attempts += 1
             if attempts == 5:
                 # 签到错误
-                condition = "error"
                 allMessage = "💔签到未知错误："+ str(e)
-                send('精易签到', allMessage + '\n\n本通知 By HY-jingyi\n通知时间:' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),condition)
+                send('精易签到', allMessage + '\n\n本通知 By HY-jingyi\n通知时间:' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
                 break
 
 if __name__ == "__main__":
