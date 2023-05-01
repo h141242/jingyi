@@ -32,6 +32,7 @@ def jingyi_checkin():
     #print(html_code)
     attempts = 0
     success = False
+    #循环执行5次，我这前2次都会提示ancc_tokenV2，所以加了个循环
     while attempts < 5 and not success:
 
         print('签到执行第'+str(attempts+1)+'次')
