@@ -21,8 +21,9 @@ def jingyi_checkin():
 
     else:
         #COOKIES格式错误
-        allMessage="💔Cookie环境变量格式不对! 如：Formhash@Cookie"
-        send('精易签到', allMessage + '\n\n本通知 By HY-jingyi\n通知时间:' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        print("Cookie环境变量格式不对! 如：Formhash@Cookie")
+        return
+        
         
 
     url = "https://bbs.125.la/plugin.php?id=dsu_paulsign:sign&operation=qiandao&infloat=1"
