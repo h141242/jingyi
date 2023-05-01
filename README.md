@@ -1,5 +1,9 @@
 # 精易论坛
 
+最近在学习python 所以换成python重写精易签到
+
+
+
 青龙面板--环境变量--新建
 
 JY_COOKIE  填入Formhash@Cookie
